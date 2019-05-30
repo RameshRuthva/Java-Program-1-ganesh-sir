@@ -1,0 +1,605 @@
+
+
+
+1).create the constructor & passing the arguments:
+---------------------------------------------------
+
+	package org.test
+	public class Employe
+	{
+	public Employe()
+	{
+	System.out.println("hello");
+	}
+	
+	public Employe(int id)
+	{
+	System.out.println(id);
+	}
+
+	public Employe(String name,int id)
+	{
+	System.out.println(name);
+	System.out.println(id);
+	}
+
+	public static void main(String[]args)
+	{
+	Employe ob=new Employe();
+	Employe ob1=new Employe(14);
+	Employe ob2=new Employe("hello",99);	
+	
+	}
+	}
+
+
+2).create the constructor & passing the arguments using this:
+--------------------------------------------------------------
+
+	package org.test
+	public class Employe
+	{
+	public Employe()
+	{
+	this(12);
+	System.out.println("hello");
+	}
+	
+	public Employe(int id)
+	{
+	this(22,"raj");
+	System.out.println(id);
+	}
+	
+	public Employe(int id,String name)
+	{
+	System.out.println(id);
+	System.out.println(name);
+	}
+	
+	public static void main(String[]args)
+	{
+	Employe ob=new Employe();
+	}
+	}
+
+
+
+3). Create the constructor & pass the arguments using super:
+-------------------------------------------------------------
+
+	package org.test
+	
+	public class Employe
+	{
+
+	public Employe(int id)
+	{
+	System.out.println(id);
+	}
+	
+
+	public class Sample extends Employe
+	{
+	public Sample()
+	{
+	Super(100);
+	System.out.println("hai");
+	}
+
+	public static void main(String[]args)
+	{
+	Sample ob=new Sample();
+	}
+	}
+  
+
+4).single inheritance :
+--------------------
+        package org.test
+	public class Sampletest
+	{
+	public void display()
+	{
+	system.out.println("hai");
+	}
+
+	}
+
+	
+	package org.test
+	public class Sampletest1 extends Sampletest
+	{
+	public static void main(String[]args)
+	{
+	Sampletest1 ob=new Sampletest1
+	ob.display()
+	}
+	}
+
+	
+5). Multilevel Inheritance:
+---------------------------
+       
+
+        package org.inheritance2;
+
+	public class SampleTest
+	{
+	public void display()
+	{
+		System.out.println("method in parent class");
+	}
+	}
+
+
+
+	package org.inheritance2;
+
+	public class SampleTest1 extends SampleTest
+	{
+	public void display1()
+	{
+		System.out.println("method in 1st child class");
+	}
+	}
+
+
+
+	package org.inheritance2;
+
+	public class SampleTest2 extends SampleTest1
+	{
+	public void display2()
+	{
+		System.out.println(" method in 2nd child class");
+	}
+	public static void main(String[]args)
+	{
+		SampleTest2 sc=new SampleTest2();
+		sc.display();
+		sc.display1();
+		sc.display2();
+	}
+	}
+
+
+6). Hierarchical Inheritance:
+-----------------------------
+
+	package org.inheritance2;
+
+	public class SampleTest
+	{
+		public void display()
+		{
+			System.out.println(" method in parent class");
+		}
+	}
+
+
+	package org.inheritance2;
+
+	public class SampleTest1 extends SampleTest
+	{
+	public static void main(String[]args)
+	{
+	SampleTest1 sc=new SampleTest1();
+	sc.display();
+	}
+
+	
+	}
+
+
+	package org.inheritance2;
+
+	public class SampleTest2 extends SampleTest
+	{
+	public static void main(String[]args)
+	{
+		SampleTest2 sc=new SampleTest2();
+		sc.display();
+	}
+	}
+
+
+	package org.inheritance2;
+
+	public class SampleTest3 extends SampleTest
+	{
+	public static void main(String[]args)
+	{
+		SampleTest3 sc=new SampleTest3();
+		sc.display();
+	}
+	}
+
+
+7).method overloading:
+----------------------
+       package org.test
+       public class Loading
+	{
+
+	public void getId(int id)
+	{
+	system.out.println("employe id"+id);
+	}
+
+	public void getId(String name,float sal)
+	{
+	system.out.println("employe"+name,"salary"+sal);
+	}
+	
+	public static void main(String[]args)
+	{
+	Loading ob=new Loading();
+	ob.getId(145);
+	ob.getId("mali",25424.24);
+	}
+	}
+
+8). method overriding:
+----------------------
+
+	package.org.test
+	public class Sample
+	{
+
+	public void display()
+	{
+	System.out.println("99%");
+	}
+
+	public void deposite(int id)
+	{
+	system.out.println("3%");
+	}
+
+	}
+
+	package.org.test
+	public class Overriding  extends Sample 
+	{
+	public void deposite(int id)
+	{
+	system.out.println("5%",+id)
+	}
+	
+	public static void main(String[]args)
+	{
+	Overriding ob=new Overriding();
+	ob.display();
+	ob.deposite(151);
+	}
+	}
+	
+
+9).Interface code:
+------------------
+
+        package org.test
+	public interface Sample
+	{
+	public void display();
+	abstact void get();
+	void test();
+ 	}
+
+
+	package org.test
+	public class Temp implement Sample
+	{
+	//@override
+	public void display()
+	{
+	System.out.println("name");
+	}
+	//@override
+	public void get()
+	{
+	System.out.println("employe id");
+	}
+	//@override
+	public void test()
+	{
+	System.out.println("phone");
+	}
+
+	public static void main(String[]args)
+	{
+	Temp ob=new Temp();
+	ob.display();
+	ob.get();
+	ob.test();
+	}
+	}
+
+10.Abstract class:
+-----------------
+
+       package org.test
+	public abstract class Sample
+	{
+	public abstract void display();
+	public abstract void get();
+	public void test()
+	{
+	System.out.println("hello");
+	}
+	}
+
+	package org.test
+	public class Temp extends Sample
+	{
+	//@override
+	public void display()
+	{
+	System.out.println("hello");
+	}
+	//@override
+	public void get()
+	{
+	System.out.println("name");
+	}
+
+	public static void main(String[]args)
+	{
+	Temp ob=new Temp();
+	ob.display();
+	ob.get();
+	ob.test();
+	
+	}
+	}
+
+
+11). create userdefine list & insert value & iterate
+----------------------------------------------------
+
+	package org.test
+
+	public class Employe
+	{
+	private int id;
+	private String name;
+
+	
+	public int getId()
+	{
+	return id;
+	}
+	Public void setId(int id)
+	{
+	this.id=id;
+	}
+
+	public String getName()
+	{
+	return name;
+	}
+	public void setName(String name)
+	{
+	this.name=name;
+	}
+
+
+	package org.test
+	public class Sample
+	{
+	public static void main(String[]args)
+	{
+	List<Employe> li=new ArrayList<>();
+
+	Employe e1=new Employe();
+	e1.setId(1);
+	e2.setName("hello");
+	
+	Employe e2=new Employe();
+	e2.setId(2);
+	e2.setName("kuma");
+
+	li.add(e1);
+	li.add(e2);
+
+	// normal for loop
+	
+	for(int i=0;i<li.size();i++)
+	{
+	System.out.println("Emp id"+li.get(i).getId);
+	System.out.println("Emp Nam"+li.get(i).getName);
+	}
+
+	// foreach 
+
+	for(Employe i:li)
+	{
+	System.out.println("Emp id"+i.getId);
+	System.out.println("Emp name",+i.getName);
+	}
+
+
+
+12). create userdefine Set & insert value & iterate
+----------------------------------------------------
+
+	package org.test
+
+	public class Employe
+	{
+	private int id;
+	private String name;
+
+	
+	public int getId()
+	{
+	return id;
+	}
+	Public void setId(int id)
+	{
+	this.id=id;
+	}
+
+	public String getName()
+	{
+	return name;
+	}
+	public void setName(String name)
+	{
+	this.name=name;
+	}
+
+
+	package org.test
+	public class Sample
+	{
+	public static void main(String[]args)
+	{
+	Set<Employe> si=new LinkedHashSet<>();
+
+	Employe e1=new Employe();
+	e1.setId(1);
+	e2.setName("hello");
+	
+	Employe e2=new Employe();
+	e2.setId(2);
+	e2.setName("kuma");
+
+	si.add(e1);
+	si.add(e2);
+
+
+	// foreach 
+
+	for(Employe i:si)
+	{
+	System.out.println("Emp id"+i.getId);
+	System.out.println("Emp name",+i.getName);
+	}
+
+
+13). create userdefine map & insert value & iterate
+----------------------------------------------------
+
+	package org.test
+
+	public class Employe
+	{
+	private int id;
+	private String name;
+
+	
+	public int getId()
+	{
+	return id;
+	}
+	Public void setId(int id)
+	{
+	this.id=id;
+	}
+
+	public String getName()
+	{
+	return name;
+	}
+	public void setName(String name)
+	{
+	this.name=name;
+	}
+
+
+	package org.test
+	public class Sample
+	{
+	public static void main(String[]args)
+	{
+	Map<integer,Employe> mp=new LinkedHashMap<>();
+
+	Employe e1=new Employe();
+	e1.setId(1);
+	e2.setName("hello");
+	
+	Employe e2=new Employe();
+	e2.setId(2);
+	e2.setName("kuma");
+
+	mp.put(1,e1);
+	mp.put(2,e2);
+	
+
+	// foreach 
+       Set<Entry<integer,Employe>> emp=mp.entryset();
+
+	for(Entry<integer,Employe> x:emp)
+	{
+	System.out.println("1st emp"+x.getKey());
+	System.out.println("Emp id"+x.getValue().getId);
+	System.out.println("Emp name",+x.getValue().getName);
+	}
+
+
+
+
+
+
+ 
+   Class:
+  -------
+
+     The collection of methods & objects is called as class.
+
+  Method:
+  -------
+    The set actions to be performed is called as method.
+
+  Object:
+  -------
+     The run time meory allocation & call any method.```
+
+  This:
+  -----
+    * To overcome the different no of object creation using This key.
+    * Single class only we can use the This key.
+    * Using This key, we can pass the different no of argument.
+
+ Super:
+ ------
+   * To overcome the different no of object creation using Super key.
+   * Multi class only we can use the Super key.
+   * Using Super key, we can pass the different no of argument.
+
+  final:
+  ------
+   * If final used in the datatype, it is constant one, we cant modifier.
+   * If final used in the method, we cant use same method name in others.
+   * If final used in the class, we cant extends the class.
+   
+  static:
+  -------
+   * If static used in the method, we wont create an object.
+   * static method outside of class, we can use classname.methodname.
+
+  try,catch&finally:
+  ------------------
+    * by using this block , we can handling the exception.
+  try:
+  ----
+   * try to throw the exception.
+  catch:
+  -----
+   * catch the exception in the try block.
+  finally:
+  -------
+    * finally is block is always get the executed.  
+
+
+
+
+
+
+
+
+
+
+
